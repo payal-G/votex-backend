@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^l#7h0n_w3nn#bsw+xnt0t#s&stf&&*g#2(-^s$#_t6&##2%9*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'votex-backend-jswv.onrender.com',
