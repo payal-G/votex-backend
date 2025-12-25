@@ -26,10 +26,10 @@ SECRET_KEY = 'django-insecure-^l#7h0n_w3nn#bsw+xnt0t#s&stf&&*g#2(-^s$#_t6&##2%9*
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'votex-backend-jswv.onrender.com',
     '127.0.0.1',
     'localhost',
     '10.208.13.163',
-    'votex-backend-jswv.onrender.com',
 ]
 
 
