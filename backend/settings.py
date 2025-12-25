@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     '10.208.13.163',
+    'votex-backend-jswv.onrender.com',
 ]
 
 
