@@ -85,23 +85,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 import os
-from urllib.parse import urlparse
+import dj_database_url
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
+DATABASES = {
+    "default": dj_database_url.config(
+        default="sqlite:///db.sqlite3",
+        conn_max_age=600,
+    )
+}
 
-if DATABASE_URL:
-    url = urlparse(DATABASE_URL)
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": url.path[1:],
-            "USER": url.username,
-            "PASSWORD": url.password,
-            "HOST": url.hostname,
-            "PORT": url.port,
-            "OPTIONS": {"sslmode": "require"},
-        }
-    }
+# Enable SSL only in production (Neon / Render)
+if os.getenv("DATABASE_URL"):
+    DATABASES["default"]["OPTIONS"] = {"sslmode": "require"}
+
 
 
 
